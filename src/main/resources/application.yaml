@@ -1,0 +1,14 @@
+spring.application.name: account-balance-kafka-stream-stateful
+server:
+  port: 8000
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:19092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+---
+spring.kafka.streams.replication-factor: 1
+spring.kafka.streams.application-id: account-balance
